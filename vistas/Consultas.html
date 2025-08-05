@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Consulta de Energía Renovable</h1>
+    <div class="row align-items-end mb-4">
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Seleccione el país</label>
+            <select class="form-select" ng-model="paisSeleccionado" ng-options="p for p in paises"
+                ng-change="generarGrafica(paisSeleccionado, desde, hasta)">
+                <option value="">Seleccione...</option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Año inicial</label>
+            <input type="number" class="form-control" ng-model="desde" ng-change="generarGrafica(paisSeleccionado, desde, hasta)">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Año final</label>
+            <input type="number" class="form-control" ng-model="hasta" ng-change="generarGrafica(paisSeleccionado, desde, hasta)">
+        </div>
+    </div>
+
+    <div ng-if="paisSeleccionado">
+        <h3 class="mb-3">Gráfica de generación renovable en {{paisSeleccionado}}</h3>
+        <canvas id="graficaEnergia" width="600" height="400"></canvas>
+    </div>
+</div>

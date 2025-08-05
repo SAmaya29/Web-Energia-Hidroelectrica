@@ -4,9 +4,9 @@ app.config(function ($routeProvider) {
         .when('/inicio', {
             templateUrl: 'vistas/Inicio.html',
         })
-        .when('/radiacion', {
-            templateUrl: 'vistas/RadiacionSolar.html',
-            controller: 'ControladorRadiacionSolar'
+        .when('/consultas', {
+            templateUrl: 'vistas/Consultas.html',
+            controller: 'ControladorConsultas'
         })
         .when('/consumo', {
             templateUrl: 'vistas/Consumo.html',
