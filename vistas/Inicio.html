@@ -2,30 +2,42 @@
 <div class="inicio-container">
     <!-- Sección Hero con imagen de fondo -->
     <section class="hero-section position-relative overflow-hidden">
-        <!-- Overlay transparente -->
-        <div class="hero-overlay position-absolute w-100 h-100"></div>
-
+        <!-- Partículas animadas de fondo -->
+        <div class="particles-bg position-absolute w-100 h-100">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
         <!-- Contenido principal -->
         <div class="container position-relative z-3">
             <div class="row min-vh-100 align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
-                    <!-- Título principal -->
+                    <!-- Título principal con efecto typewriter -->
                     <h1 class="hero-title display-2 fw-bold text-white mb-4 animate-fade-in">
                         Energías Renovables
-                        del Futuro
+                        <br>del Futuro
                     </h1>
 
-                    <!-- Subtítulo -->
-                    <p class="hero-subtitle lead text-white-75 mb-5 fs-4 animate-fade-in-delay">
+                    <!-- Subtítulo con efecto de resplandor -->
+                    <p class="hero-subtitle lead text-white-75 mb-5 fs-4 animate-fade-in-delay glow-text">
                         Explorando el potencial de la energía hidroeléctrica en Colombia.
                     </p>
 
-                    <!-- Botón CTA -->
-                    <a href="#!/radiacion"
-                        class="btn btn-success btn-lg px-5 py-3 rounded-pill shadow-lg animate-bounce">
-                        <i class="bi bi-droplet"></i>
-                        Explorar Datos
-                    </a>
+                    <!-- Botón CTA mejorado con efectos -->
+                    <div class="cta-container">
+                        <a href="#!/consultas"
+                            class="btn btn-success-gradient btn-lg px-5 py-3 rounded-pill shadow-lg animate-bounce pulse-btn">
+                            <i class="bi bi-droplet me-2"></i>
+                            <span>Explorar Datos</span>
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,13 +48,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- Columna de texto -->
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="content-card p-4">
-                        <h2 class="section-title h1 fw-bold text-primary mb-4">
+                <div class="col-lg-6 mb-4 mb-lg-0 reveal-left">
+                    <div class="content-card-glass p-5">
+                        <h2 class="section-title h1 fw-bold text-primary mb-4 gradient-text">
                             ¿Qué es y como funciona la Energía Hidroeléctrica?
                         </h2>
 
-                        <p class="text-muted fs-5 lh-lg mb-4">
+                        <p class="text-muted fs-5 lh-lg mb-4 animated-text">
                             La energía hidroeléctrica es una forma de generar electricidad aprovechando la fuerza del
                             agua en movimiento.
                             Funciona mediante la construcción de represas o presas que almacenan grandes cantidades de
@@ -54,30 +66,50 @@
                             especialmente en regiones con abundantes recursos hídricos.
                         </p>
 
+                        <!-- Barra de progreso animada -->
+                        <div class="progress-container mt-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-bold text-primary">Eficiencia Energética</span>
+                                <span class="text-primary">85%</span>
+                            </div>
+                            <div class="progress custom-progress">
+                                <div class="progress-bar bg-gradient-primary" style="width: 85%" data-width="85"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Columna de imagen -->
-                <div class="col-lg-6">
-                    <div class="image-container position-relative">
+                <div class="col-lg-6 reveal-right">
+                    <div class="image-container-enhanced position-relative">
+                        <div class="floating-elements">
+                            <div class="floating-icon floating-icon-1">💧</div>
+                            <div class="floating-icon floating-icon-2">⚡</div>
+                            <div class="floating-icon floating-icon-3">🌱</div>
+                        </div>
                         <img src="imagenes/ComoFunciona.jpg" alt="Funcionamiento de la energía hidroeléctrica"
-                            class="img-fluid rounded-4 shadow-lg solar-image clickable-image" data-bs-toggle="modal"
+                            class="img-fluid rounded-4 shadow-lg solar-image-enhanced clickable-image" data-bs-toggle="modal"
                             data-bs-target="#imageModal" style="cursor: pointer;">
-                        <!-- Icono de zoom overlay -->
-                        <div class="zoom-overlay position-absolute top-50 start-50 translate-middle">
-                            <i class="bi bi-zoom-in text-white fs-1 opacity-0"></i>
+                        <!-- Efecto de brillo en hover -->
+                        <div class="shine-effect"></div>
+                        <!-- Icono de zoom overlay mejorado -->
+                        <div class="zoom-overlay-enhanced position-absolute top-50 start-50 translate-middle">
+                            <div class="zoom-circle">
+                                <i class="bi bi-zoom-in text-white fs-1"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Nueva sección separada para Importancia y Ventajas -->
-            <div class="row align-items-center mt-5">
+            <div class="row align-items-center mt-5 reveal-up">
                 <div class="col-lg-12">
-                    <div class="content-card p-4">
-                        <h2 class="section-title h1 fw-bold text-primary mb-4">
+                    <div class="content-card-glass p-5">
+                        <h2 class="section-title h1 fw-bold text-primary mb-4 gradient-text text-center">
+                            <i class="bi bi-lightning-charge-fill me-3 animated-icon"></i>
                             Importancia y Ventajas de la Energía Hidroeléctrica
                         </h2>
-                        <p class="text-muted fs-5 lh-lg mb-4">
+                        <p class="text-muted fs-5 lh-lg mb-4 text-center animated-text">
                             La energía hidroeléctrica es de gran importancia porque ofrece una fuente de electricidad
                             limpia, renovable y confiable. Al no depender de combustibles fósiles, contribuye a reducir
                             las emisiones de gases de efecto invernadero y mitigar el cambio climático. Además, permite
@@ -85,72 +117,131 @@
                             abastecimiento energético de comunidades enteras, especialmente en países con abundantes
                             recursos hídricos.
                         </p>
-                        <h2 class="section-title h3 fw-bold text-primary mb-4 mt-5">Ventajas</h2>
-                        <!-- Lista de características -->
-                        <ul class="feature-list list-unstyled">
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-arrow-repeat text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Es renovable y sostenible:</strong> Utiliza el ciclo natural
-                                    del agua, lo que la convierte en una fuente inagotable a largo plazo.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-cloud-check text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>No produce emisiones contaminantes:</strong> No genera
-                                    dióxido de carbono ni otros gases de efecto invernadero durante su operación.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-lightning-fill text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Generación continua y estable:</strong> Puede producir
-                                    energía de forma constante, a diferencia de fuentes intermitentes como la solar o
-                                    eólica.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-droplet-fill text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Regulación del agua:</strong> Las represas pueden ayudar a
-                                    controlar inundaciones, almacenar agua para consumo y riego, y regular el caudal de
-                                    los ríos.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-building text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Desarrollo local:</strong> Los proyectos hidroeléctricos
-                                    suelen impulsar el desarrollo económico regional mediante la creación de empleo e
-                                    infraestructura.</span>
-                            </li>
-                        </ul>
-                        <h2 class="section-title h3 fw-bold text-primary mb-4 mt-5">Desventajas</h2>
-                        <!-- Lista de desventajas -->
-                        <ul class="feature-list list-unstyled">
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-tree text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Impacto ambiental:</strong> La construcción de represas puede
-                                    alterar ecosistemas, afectar la fauna y flora, y modificar el curso natural de los
-                                    ríos.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-house-x text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Desplazamiento de comunidades:</strong> En muchos casos, las
-                                    áreas inundadas para formar embalses obligan a trasladar personas y comunidades
-                                    enteras.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-currency-dollar text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Alta inversión inicial:</strong> La construcción de plantas
-                                    hidroeléctricas requiere grandes costos económicos y largos tiempos de
-                                    ejecución.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-cloud-rain text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Dependencia del clima:</strong> En épocas de sequía o cambios
-                                    en el régimen de lluvias, la capacidad de generación puede disminuir
-                                    considerablemente.</span>
-                            </li>
-                            <li class="d-flex align-items-center mb-3">
-                                <i class="bi bi-exclamation-triangle text-success me-3 fs-5"></i>
-                                <span class="fs-6"><strong>Afecta la vida acuática:</strong> Las represas pueden
-                                    interrumpir la migración de peces y cambiar la calidad del agua, afectando
-                                    negativamente a las especies acuáticas.</span>
-                            </li>
-                        </ul>
+
+                        <!-- Grid de ventajas y desventajas -->
+                        <div class="row mt-5">
+                            <!-- Ventajas -->
+                            <div class="col-lg-6 mb-4">
+                                <div class="advantages-card h-100">
+                                    <h3 class="h3 fw-bold text-success mb-4 text-center">
+                                        <i class="bi bi-check-circle-fill me-2"></i>Ventajas
+                                    </h3>
+                                    <!-- Lista de características mejorada -->
+                                    <ul class="feature-list-enhanced list-unstyled">
+                                        <li class="feature-item mb-3" data-aos="fade-right" data-aos-delay="100">
+                                            <div class="feature-icon bg-success">
+                                                <i class="bi bi-arrow-repeat text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Es renovable y sostenible:</strong> Utiliza el ciclo natural
+                                                del agua, lo que la convierte en una fuente inagotable a largo plazo.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-right" data-aos-delay="200">
+                                            <div class="feature-icon bg-success">
+                                                <i class="bi bi-cloud-check text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>No produce emisiones contaminantes:</strong> No genera
+                                                dióxido de carbono ni otros gases de efecto invernadero durante su operación.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-right" data-aos-delay="300">
+                                            <div class="feature-icon bg-success">
+                                                <i class="bi bi-lightning-fill text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Generación continua y estable:</strong> Puede producir
+                                                energía de forma constante, a diferencia de fuentes intermitentes como la solar o
+                                                eólica.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-right" data-aos-delay="400">
+                                            <div class="feature-icon bg-success">
+                                                <i class="bi bi-droplet-fill text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Regulación del agua:</strong> Las represas pueden ayudar a
+                                                controlar inundaciones, almacenar agua para consumo y riego, y regular el caudal de
+                                                los ríos.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-right" data-aos-delay="500">
+                                            <div class="feature-icon bg-success">
+                                                <i class="bi bi-building text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Desarrollo local:</strong> Los proyectos hidroeléctricos
+                                                suelen impulsar el desarrollo económico regional mediante la creación de empleo e
+                                                infraestructura.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Desventajas -->
+                            <div class="col-lg-6 mb-4">
+                                <div class="disadvantages-card h-100">
+                                    <h3 class="h3 fw-bold text-warning mb-4 text-center">
+                                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Desventajas
+                                    </h3>
+                                    <!-- Lista de desventajas mejorada -->
+                                    <ul class="feature-list-enhanced list-unstyled">
+                                        <li class="feature-item mb-3" data-aos="fade-left" data-aos-delay="100">
+                                            <div class="feature-icon bg-warning">
+                                                <i class="bi bi-tree text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Impacto ambiental:</strong> La construcción de represas puede
+                                                alterar ecosistemas, afectar la fauna y flora, y modificar el curso natural de los
+                                                ríos.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-left" data-aos-delay="200">
+                                            <div class="feature-icon bg-warning">
+                                                <i class="bi bi-house-x text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Desplazamiento de comunidades:</strong> En muchos casos, las
+                                                áreas inundadas para formar embalses obligan a trasladar personas y comunidades
+                                                enteras.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-left" data-aos-delay="300">
+                                            <div class="feature-icon bg-warning">
+                                                <i class="bi bi-currency-dollar text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Alta inversión inicial:</strong> La construcción de plantas
+                                                hidroeléctricas requiere grandes costos económicos y largos tiempos de
+                                                ejecución.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-left" data-aos-delay="400">
+                                            <div class="feature-icon bg-warning">
+                                                <i class="bi bi-cloud-rain text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Dependencia del clima:</strong> En épocas de sequía o cambios
+                                                en el régimen de lluvias, la capacidad de generación puede disminuir
+                                                considerablemente.
+                                            </div>
+                                        </li>
+                                        <li class="feature-item mb-3" data-aos="fade-left" data-aos-delay="500">
+                                            <div class="feature-icon bg-warning">
+                                                <i class="bi bi-exclamation-triangle text-white"></i>
+                                            </div>
+                                            <div class="feature-content">
+                                                <strong>Afecta la vida acuática:</strong> Las represas pueden
+                                                interrumpir la migración de peces y cambiar la calidad del agua, afectando
+                                                negativamente a las especies acuáticas.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -163,7 +254,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="content-card p-4">
-                        <h2 class="section-title h1 fw-bold text-primary mb-4">
+                        <h2 class="section-title h1 fw-bold mb-4" style="color: #4facfe;">
                             Evolución de la Energía Hidroeléctrica en Colombia
                         </h2>
                         <p class="text-muted fs-5 lh-lg mb-4">
@@ -185,7 +276,7 @@
                         <!-- Botón para ver mapa interactivo -->
                         <div class="text-center mt-4">
                             <a href="https://arcg.is/1u91Ce2" target="_blank"
-                                class="btn btn-success btn-lg px-5 py-3 rounded-pill shadow-lg animate-bounce">
+                                class="btn btn-success-gradient-vibrant btn-lg px-5 py-3 rounded-pill shadow-lg animate-bounce">
                                 <i class="bi bi-geo-alt-fill me-2"></i>
                                 Ver Mapa Interactivo de Hidroeléctricas
                             </a>
@@ -199,36 +290,54 @@
     <!-- Sección de estadísticas -->
     <section class="stats-section bg-light py-5">
         <div class="container">
+            <!-- Título de la sección -->
+            <div class="text-center mb-5 reveal-up">
+                <h2 class="display-5 fw-bold mb-3" style="color: #4facfe;">
+                    <i class="bi bi-graph-up-arrow me-3 animated-icon"></i>
+                    Colombia en Números
+                </h2>
+                <p class="lead text-muted">Datos destacados sobre la energía hidroeléctrica en el país</p>
+            </div>
+            
             <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="stat-card p-4 h-100">
-                        <div class="stat-icon text-success mb-3">
-                            <i class="bi bi-award display-4"></i>
+                <div class="col-md-4 mb-4 reveal-up" data-delay="0.1s">
+                    <div class="stat-card-enhanced p-4 h-100">
+                        <div class="stat-icon-enhanced text-success mb-3">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-award display-4"></i>
+                                <div class="icon-bg"></div>
+                            </div>
                         </div>
-                        <h3 class="stat-number display-5 fw-bold text-primary">#2</h3>
-                        <p class="stat-label text-muted">Colombia es el segundo país de América Latina con mayor
+                        <h3 class="stat-number-animated display-5 fw-bold" style="color: #4facfe;" data-count="2">#2</h3>
+                        <p class="stat-label text-muted mt-3">Colombia es el segundo país de América Latina con mayor
                             dependencia de la energía hidroeléctrica</p>
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="stat-card p-4 h-100">
-                        <div class="stat-icon text-success mb-3">
-                            <i class="bi bi-lightning-charge display-4"></i>
+                <div class="col-md-4 mb-4 reveal-up" data-delay="0.2s">
+                    <div class="stat-card-enhanced p-4 h-100">
+                        <div class="stat-icon-enhanced text-success mb-3">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-lightning-charge display-4"></i>
+                                <div class="icon-bg"></div>
+                            </div>
                         </div>
-                        <h3 class="stat-number display-5 fw-bold text-primary">+80</h3>
-                        <p class="stat-label text-muted">Centrales hidroeléctricas activas en Colombia</p>
+                        <h3 class="stat-number-animated display-5 fw-bold" style="color: #4facfe;" data-count="80">+80</h3>
+                        <p class="stat-label text-muted mt-3">Centrales hidroeléctricas activas en Colombia</p>
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="stat-card p-4 h-100">
-                        <div class="stat-icon text-success mb-3">
-                            <i class="bi bi-droplet-fill display-4"></i>
+                <div class="col-md-4 mb-4 reveal-up" data-delay="0.3s">
+                    <div class="stat-card-enhanced p-4 h-100">
+                        <div class="stat-icon-enhanced text-success mb-3">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-droplet-fill display-4"></i>
+                                <div class="icon-bg"></div>
+                            </div>
                         </div>
-                        <h3 class="stat-number display-5 fw-bold text-primary">70%</h3>
-                        <p class="stat-label text-muted">Porcentaje de energía que usa Colombia proveniente de fuentes
-                            hidroeléctricas </p>
+                        <h3 class="stat-number-animated display-5 fw-bold" style="color: #4facfe;" data-count="70">70%</h3>
+                        <p class="stat-label text-muted mt-3">Porcentaje de energía que usa Colombia proveniente de fuentes
+                            hidroeléctricas</p>
                     </div>
                 </div>
             </div>
@@ -273,8 +382,279 @@
         --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --gradient-success-alt: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        --gradient-warning: linear-gradient(135deg, #ffa726 0%, #ffcc02 100%);
         --shadow-soft: 0 15px 35px rgba(0, 0, 0, 0.1);
         --shadow-medium: 0 20px 40px rgba(0, 0, 0, 0.15);
+        --shadow-strong: 0 25px 50px rgba(0, 0, 0, 0.25);
+        --glass-bg: rgba(255, 255, 255, 0.25);
+        --glass-border: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Partículas animadas de fondo */
+    .particles-bg {
+        z-index: 1;
+    }
+
+    .particle {
+        position: absolute;
+        background: rgba(79, 172, 254, 0.6);
+        border-radius: 50%;
+        animation: float-particles 6s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    .particle:nth-child(1) { width: 8px; height: 8px; left: 10%; top: 20%; animation-delay: 0s; }
+    .particle:nth-child(2) { width: 12px; height: 12px; left: 20%; top: 80%; animation-delay: 2s; }
+    .particle:nth-child(3) { width: 6px; height: 6px; left: 60%; top: 10%; animation-delay: 4s; }
+    .particle:nth-child(4) { width: 10px; height: 10px; left: 80%; top: 60%; animation-delay: 1s; }
+    .particle:nth-child(5) { width: 14px; height: 14px; left: 30%; top: 40%; animation-delay: 3s; }
+    .particle:nth-child(6) { width: 8px; height: 8px; left: 70%; top: 30%; animation-delay: 5s; }
+    .particle:nth-child(7) { width: 6px; height: 6px; left: 90%; top: 20%; animation-delay: 2.5s; }
+    .particle:nth-child(8) { width: 10px; height: 10px; left: 40%; top: 70%; animation-delay: 4.5s; }
+
+    @keyframes float-particles {
+        0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+        33% { transform: translateY(-30px) rotate(120deg); opacity: 0.8; }
+        66% { transform: translateY(-15px) rotate(240deg); opacity: 0.9; }
+    }
+
+    /* Overlay mejorado con gradiente animado */
+    .hero-overlay {
+        background: linear-gradient(135deg, 
+            rgba(0, 0, 0, 0.6) 0%, 
+            rgba(79, 172, 254, 0.3) 50%, 
+            rgba(40, 167, 69, 0.3) 100%);
+        backdrop-filter: blur(2px);
+        animation: gradient-shift 8s ease-in-out infinite;
+        background-size: 400% 400%;
+    }
+
+    @keyframes gradient-shift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    /* Texto con resplandor */
+    .glow-text {
+        text-shadow: 0 0 20px rgba(79, 172, 254, 0.5), 
+                     0 0 40px rgba(79, 172, 254, 0.3),
+                     0 0 60px rgba(79, 172, 254, 0.2);
+    }
+
+    /* Botón mejorado con gradiente */
+    .btn-success-gradient {
+        background: var(--gradient-success-alt);
+        border: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .btn-success-gradient::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s;
+        z-index: -1;
+    }
+
+    .btn-success-gradient:hover::before {
+        left: 100%;
+    }
+
+    .pulse-btn {
+        animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+        0% { box-shadow: 0 0 20px rgba(40, 167, 69, 0.4); }
+        50% { box-shadow: 0 0 30px rgba(40, 167, 69, 0.8), 0 0 40px rgba(40, 167, 69, 0.4); }
+        100% { box-shadow: 0 0 20px rgba(40, 167, 69, 0.4); }
+    }
+
+    /* Indicador de scroll */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .scroll-down {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        animation: bounce-scroll 2s infinite;
+    }
+
+    @keyframes bounce-scroll {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
+
+    /* Glassmorphism para tarjetas */
+    .content-card-glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-medium);
+        transition: all 0.3s ease;
+    }
+
+    .content-card-glass:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-strong);
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Texto con gradiente */
+    .gradient-text {
+        background: var(--gradient-success);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Iconos animados */
+    .animated-icon {
+        display: inline-block;
+        animation: icon-bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes icon-bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-8px); }
+        60% { transform: translateY(-4px); }
+    }
+
+    /* Barra de progreso personalizada */
+    .progress-container {
+        margin-top: 1.5rem;
+    }
+
+    .custom-progress {
+        height: 8px;
+        border-radius: 4px;
+        background: rgba(79, 172, 254, 0.2);
+        overflow: hidden;
+    }
+
+    .bg-gradient-primary {
+        background: var(--gradient-success) !important;
+        animation: progress-fill 2s ease-out;
+    }
+
+    @keyframes progress-fill {
+        from { width: 0% !important; }
+    }
+
+    /* Imagen mejorada */
+    .image-container-enhanced {
+        position: relative;
+        perspective: 1000px;
+        overflow: hidden;
+        border-radius: 1rem;
+    }
+
+    .solar-image-enhanced {
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        border: 3px solid rgba(79, 172, 254, 0.3);
+        position: relative;
+        z-index: 2;
+    }
+
+    .solar-image-enhanced:hover {
+        transform: rotateY(-8deg) rotateX(8deg) scale(1.05);
+        border-color: rgba(79, 172, 254, 0.8);
+    }
+
+    /* Efecto de brillo */
+    .shine-effect {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+        transition: left 0.6s;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    .image-container-enhanced:hover .shine-effect {
+        left: 100%;
+    }
+
+    /* Elementos flotantes */
+    .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .floating-icon {
+        position: absolute;
+        font-size: 1.5rem;
+        opacity: 0.8;
+        animation: float-around 4s ease-in-out infinite;
+    }
+
+    .floating-icon-1 { top: 10%; left: 10%; animation-delay: 0s; }
+    .floating-icon-2 { top: 20%; right: 15%; animation-delay: 1.5s; }
+    .floating-icon-3 { bottom: 15%; left: 20%; animation-delay: 3s; }
+
+    @keyframes float-around {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(10px, -10px) rotate(90deg); }
+        50% { transform: translate(-5px, -20px) rotate(180deg); }
+        75% { transform: translate(-10px, -5px) rotate(270deg); }
+    }
+
+    /* Overlay de zoom mejorado */
+    .zoom-overlay-enhanced {
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 4;
+    }
+
+    .zoom-circle {
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        animation: zoom-pulse 2s infinite;
+    }
+
+    @keyframes zoom-pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    .image-container-enhanced:hover .zoom-overlay-enhanced {
+        opacity: 1;
     }
 
     /* Estilos para la sección hero */
@@ -284,17 +664,29 @@
         background-size: cover;
         background-position: center;
         position: relative;
-        /* Efecto de animación de gradiente sobre la imagen */
-        /* Si quieres mantener el gradiente animado sobre la imagen, puedes agregarlo al overlay */
     }
 
+    .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4); /* Ajusta la opacidad aquí */
+    z-index: 2;
+    pointer-events: none;
+}
+.hero-section > .container {
+    position: relative;
+    z-index: 3;
+}
+
     .hero-overlay {
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(1px);
+        backdrop-filter: blur(2px);
+        animation: gradient-shift 8s ease-in-out infinite;
+        background-size: 400% 400%;
     }
 
     .hero-title {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         letter-spacing: -0.02em;
     }
 
@@ -510,13 +902,211 @@
         color: #4facfe !important;
     }
 
-    /* Lista de características */
-    .feature-list li {
-        transition: transform 0.2s ease;
+    /* Lista de características mejorada */
+    .feature-list-enhanced {
+        padding: 0;
     }
 
-    .feature-list li:hover {
-        transform: translateX(5px);
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 1rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .feature-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-item:hover::before {
+        left: 100%;
+    }
+
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .feature-icon i {
+        font-size: 1.2rem;
+        z-index: 3;
+        position: relative;
+    }
+
+    .feature-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        opacity: 0.1;
+        border-radius: 50%;
+        animation: icon-glow 3s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    @keyframes icon-glow {
+        0%, 100% { opacity: 0.1; transform: scale(1); }
+        50% { opacity: 0.3; transform: scale(1.05); }
+    }
+
+    .feature-content {
+        flex: 1;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Tarjetas de ventajas y desventajas */
+    .advantages-card, .disadvantages-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid var(--glass-border);
+        padding: 2rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .advantages-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--gradient-success-alt);
+    }
+
+    .disadvantages-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--gradient-warning);
+    }
+
+    .advantages-card:hover, .disadvantages-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-strong);
+    }
+
+    /* Estadísticas mejoradas */
+    .stat-card-enhanced {
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-medium);
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .stat-card-enhanced::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--gradient-success);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .stat-card-enhanced:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: var(--shadow-strong);
+    }
+
+    .stat-card-enhanced:hover::before {
+        opacity: 1;
+    }
+
+    .stat-icon-enhanced {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .icon-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .icon-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(79, 172, 254, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: icon-bg-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes icon-bg-pulse {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+        50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+    }
+
+    /* Números animados */
+    .stat-number-animated {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Animaciones de entrada */
+    .reveal-up, .reveal-left, .reveal-right {
+        opacity: 1;
+        transform: translate(0, 0);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .reveal-up.visible, .reveal-left.visible, .reveal-right.visible {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    /* Texto animado */
+    .animated-text {
+        opacity: 1;
+        animation: text-fade-in 1s ease-out 0.5s forwards;
+    }
+
+    @keyframes text-fade-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     /* Botón personalizado */
@@ -581,3 +1171,84 @@
         outline-offset: 2px;
     }
 </style>
+
+<style>
+/* Botón verde dinámico para el mapa interactivo */
+.btn-success-gradient-vibrant {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    color: #fff !important;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(67, 233, 123, 0.15), 0 1.5px 4px rgba(56, 249, 215, 0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-success-gradient-vibrant::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.5s;
+    z-index: -1;
+}
+.btn-success-gradient-vibrant:hover::before {
+    left: 100%;
+}
+.btn-success-gradient-vibrant:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(67, 233, 123, 0.22), 0 2px 8px rgba(56, 249, 215, 0.13);
+}
+</style>
+
+<!-- JavaScript básico para animaciones -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Hacer todos los elementos visibles inmediatamente
+    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+        el.classList.add('visible');
+    });
+
+    // Animar números en las estadísticas
+    document.querySelectorAll('.stat-number-animated').forEach(numberElement => {
+        const finalNumber = parseInt(numberElement.getAttribute('data-count')) || 0;
+        const isPercentage = numberElement.textContent.includes('%');
+        const isHash = numberElement.textContent.includes('#');
+        const isPlus = numberElement.textContent.includes('+');
+
+        let currentNumber = 0;
+        const increment = Math.max(1, finalNumber / 50);
+        const timer = setInterval(() => {
+            currentNumber += increment;
+            if (currentNumber >= finalNumber) {
+                currentNumber = finalNumber;
+                clearInterval(timer);
+            }
+
+            let displayNumber = Math.floor(currentNumber);
+            if (isHash) {
+                numberElement.textContent = '#' + displayNumber;
+            } else if (isPlus) {
+                numberElement.textContent = '+' + displayNumber;
+            } else if (isPercentage) {
+                numberElement.textContent = displayNumber + '%';
+            } else {
+                numberElement.textContent = displayNumber;
+            }
+        }, 50);
+    });
+
+    // Scroll suave para el indicador
+    document.querySelector('.scroll-down')?.addEventListener('click', () => {
+        const target = document.querySelector('.info-section');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+</script>

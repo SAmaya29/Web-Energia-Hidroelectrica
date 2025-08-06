@@ -1,0 +1,446 @@
+<!-- Vista de Calculadora de Consumo Energético Renovable -->
+<div class="consumo-container" ng-controller="ControladorConsumo">
+    <!-- Sección Hero -->
+    <section class="hero-section-consumo py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold text-white mb-4 animate-fade-in">
+                        <i class="bi bi-calculator me-3"></i>
+                        Calculadora de Consumo Renovable
+                    </h1>
+                    <p class="lead text-white-75 mb-0 animate-fade-in-delay">
+                        Descubre qué porcentaje de tu consumo eléctrico proviene de fuentes renovables y tu impacto
+                        ambiental
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Formulario -->
+    <section class="form-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-card-glass p-5 rounded-4 shadow-lg">
+                        <h2 class="h3 fw-bold text-center mb-4" style="color: #4facfe;">
+                            <i class="bi bi-lightning-charge-fill me-2"></i>
+                            Datos de Consumo
+                        </h2>
+
+                        <form ng-submit="calcularConsumo()" class="row g-4">
+                            <!-- Consumo eléctrico -->
+                            <div class="col-md-12">
+                                <label for="consumoKwh" class="form-label fw-semibold">
+                                    <i class="bi bi-speedometer2 me-2 text-primary"></i>
+                                    Consumo eléctrico mensual (kWh)
+                                </label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control form-control-lg" id="consumoKwh"
+                                        ng-model="formulario.consumoKwh" placeholder="Ej: 350" required min="1"
+                                        step="0.1">
+                                    <span class="input-group-text bg-primary text-white">kWh</span>
+                                </div>
+                                <div class="form-text">Puedes encontrar este dato en tu factura de electricidad</div>
+                            </div>
+
+                            <!-- Selector de país -->
+                            <div class="col-md-6">
+                                <label for="paisSelect" class="form-label fw-semibold">
+                                    <i class="bi bi-globe-americas me-2 text-success"></i>
+                                    País
+                                </label>
+                                <select class="form-select form-select-lg" id="paisSelect"
+                                    ng-model="formulario.paisSeleccionado" required>
+                                    <option value="">Selecciona un país...</option>
+                                    <option ng-repeat="pais in paises" value="{{pais}}">{{pais}}</option>
+                                </select>
+                            </div>
+
+                            <!-- Selector de año -->
+                            <div class="col-md-6">
+                                <label for="anioSelect" class="form-label fw-semibold">
+                                    <i class="bi bi-calendar-event me-2 text-warning"></i>
+                                    Año
+                                </label>
+                                <select class="form-select form-select-lg" id="anioSelect"
+                                    ng-model="formulario.anioSeleccionado" required>
+                                    <option value="">Selecciona un año...</option>
+                                    <option ng-repeat="anio in anios" value="{{anio}}">{{anio}}</option>
+                                </select>
+                            </div>
+
+                            <!-- Botón de cálculo -->
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit"
+                                    class="btn btn-success-gradient btn-lg px-5 py-3 rounded-pill shadow-lg">
+                                    <i class="bi bi-calculator me-2"></i>
+                                    Calcular Impacto Ambiental
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Resultados -->
+    <section class="results-section py-5" ng-show="resultados.mostrarResultados" id="resultadosSection">
+        <div class="container">
+            <!-- Estadísticas principales -->
+            <div class="row mb-5">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="display-5 fw-bold" style="color: #4facfe;">
+                        <i class="bi bi-graph-up-arrow me-3"></i>
+                        Resultados del Análisis
+                    </h2>
+                    <p class="lead text-muted">Tu impacto ambiental personalizado</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="stat-card-enhanced p-4 h-100 text-center">
+                        <div class="stat-icon-enhanced text-success mb-3">
+                            <i class="bi bi-battery-charging display-4"></i>
+                        </div>
+                        <h3 class="stat-number display-6 fw-bold" style="color: #4facfe;">{{resultados.porcentajeRenovable}}%</h3>
+                        <p class="stat-label text-muted">Energía Renovable</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="stat-card-enhanced p-4 h-100 text-center">
+                        <div class="stat-icon-enhanced text-primary mb-3">
+                            <i class="bi bi-lightning-fill display-4"></i>
+                        </div>
+                        <h3 class="stat-number display-6 fw-bold" style="color: #4facfe;">{{formatearNumero(resultados.consumoRenovable, 1)}}</h3>
+                        <p class="stat-label text-muted">kWh Renovables</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="stat-card-enhanced p-4 h-100 text-center">
+                        <div class="stat-icon-enhanced text-success mb-3">
+                            <i class="bi bi-tree display-4"></i>
+                        </div>
+                        <h3 class="stat-number display-6 fw-bold" style="color: #28a745;">{{formatearNumero(resultados.co2Evitado, 2)}}</h3>
+                        <p class="stat-label text-muted">kg CO₂ Evitados</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="stat-card-enhanced p-4 h-100 text-center">
+                        <div class="stat-icon-enhanced text-info mb-3">
+                            <i class="bi bi-currency-dollar display-4"></i>
+                        </div>
+                        <h3 class="stat-number display-6 fw-bold" style="color: #17a2b8;">${{formatearNumero(resultados.ahorroEstimado, 2)}}</h3>
+                        <p class="stat-label text-muted">Ahorro Estimado</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficas -->
+            <div class="row">
+                <!-- Gráfica de Pastel -->
+                <div class="col-lg-6 mb-4">
+                    <div class="chart-card-glass p-4 rounded-4 shadow-lg">
+                        <h3 class="h4 fw-bold text-center mb-4" style="color: #4facfe;">
+                            <i class="bi bi-pie-chart me-2"></i>
+                            Distribución por Fuente Energética
+                        </h3>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <canvas id="chartPastel"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfica de Barras -->
+                <div class="col-lg-6 mb-4">
+                    <div class="chart-card-glass p-4 rounded-4 shadow-lg">
+                        <h3 class="h4 fw-bold text-center mb-4" style="color: #4facfe;">
+                            <i class="bi bi-bar-chart me-2"></i>
+                            Comparación de Consumo
+                        </h3>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <canvas id="chartBarras"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información adicional -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="info-card-glass p-4 rounded-4">
+                        <h3 class="h4 fw-bold mb-3" style="color: #4facfe;">
+                            <i class="bi bi-info-circle me-2"></i>
+                            ¿Qué significan estos resultados?
+                        </h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <strong>Energía Renovable:</strong> Porcentaje de tu consumo que proviene de
+                                        fuentes limpias
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <strong>kWh Renovables:</strong> Cantidad absoluta de energía limpia que
+                                        consumes
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <strong>CO₂ Evitado:</strong> Emisiones de carbono que no se generan gracias a
+                                        la energía renovable
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <strong>Ahorro:</strong> Beneficio económico estimado por usar energía limpia
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Recomendaciones personalizadas -->
+                        <div class="mt-4" ng-if="obtenerRecomendaciones().length > 0">
+                            <h4 class="h5 fw-bold mb-3" style="color: #28a745;">
+                                <i class="bi bi-lightbulb me-2"></i>
+                                Recomendaciones para ti:
+                            </h4>
+                            <ul class="list-unstyled">
+                                <li ng-repeat="recomendacion in obtenerRecomendaciones()" class="mb-2">
+                                    <i class="bi bi-arrow-right text-primary me-2"></i>
+                                    {{recomendacion}}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Botón para limpiar -->
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-outline-primary btn-lg px-4 py-2 rounded-pill"
+                                ng-click="limpiarFormulario()">
+                                <i class="bi bi-arrow-repeat me-2"></i>
+                                Realizar Nuevo Cálculo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CSS Personalizado -->
+<style>
+    /* Variables CSS */
+    :root {
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --gradient-success-alt: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        --shadow-soft: 0 15px 35px rgba(0, 0, 0, 0.1);
+        --shadow-medium: 0 20px 40px rgba(0, 0, 0, 0.15);
+        --shadow-strong: 0 25px 50px rgba(0, 0, 0, 0.25);
+        --glass-bg: rgba(255, 255, 255, 0.25);
+        --glass-border: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Hero Section */
+    .hero-section-consumo {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-section-consumo::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+    }
+
+    .text-white-75 {
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    /* Animaciones */
+    .animate-fade-in {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .animate-fade-in-delay {
+        animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Tarjetas con efecto glass */
+    .form-card-glass,
+    .chart-card-glass,
+    .info-card-glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-medium);
+        transition: all 0.3s ease;
+    }
+
+    .form-card-glass:hover,
+    .chart-card-glass:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-strong);
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Formulario mejorado */
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #4facfe;
+        box-shadow: 0 0 0 0.25rem rgba(79, 172, 254, 0.25);
+    }
+
+    .input-group-text.bg-primary {
+        background: var(--gradient-success) !important;
+        border: none;
+        font-weight: 600;
+    }
+
+    /* Botón con gradiente */
+    .btn-success-gradient {
+        background: var(--gradient-success-alt);
+        border: none;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .btn-success-gradient::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+    }
+
+    .btn-success-gradient:hover::before {
+        left: 100%;
+    }
+
+    .btn-success-gradient:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(40, 167, 69, 0.4);
+    }
+
+    /* Tarjetas de estadísticas mejoradas */
+    .stat-card-enhanced {
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-medium);
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stat-card-enhanced::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--gradient-success);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .stat-card-enhanced:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: var(--shadow-strong);
+    }
+
+    .stat-card-enhanced:hover::before {
+        opacity: 1;
+    }
+
+    .stat-icon-enhanced {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .stat-number {
+        color: #4facfe !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    /* Contenedores de gráficas */
+    .chart-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .display-4 {
+            font-size: 2.5rem;
+        }
+
+        .chart-container {
+            height: 300px;
+        }
+
+        .stat-card-enhanced {
+            margin-bottom: 1rem;
+        }
+    }
+
+    /* Loading animation */
+    .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255, 255, 255, .3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
